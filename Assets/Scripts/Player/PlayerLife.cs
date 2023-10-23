@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         UpdateLife();
+        StillAlive();
     }
 
     void UpdateLife()
@@ -39,5 +41,12 @@ public class PlayerLife : MonoBehaviour
             ChangeLife(-daño);
         }
     }
-
+    
+    void StillAlive()
+    {
+        if (CurrentLife <= 0)
+        {
+            SceneManager.LoadScene("LoseScreen");
+        }
+    }
 }

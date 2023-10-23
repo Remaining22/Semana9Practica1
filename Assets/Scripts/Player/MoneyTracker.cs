@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoneyTracker : MonoBehaviour
 {
@@ -31,5 +32,12 @@ public class MoneyTracker : MonoBehaviour
     {
         score += changer;
         UpdateScore();
+    }
+    void Victory()
+    {
+        if(score >= 10)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }
     }
 }
