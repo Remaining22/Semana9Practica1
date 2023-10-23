@@ -27,6 +27,6 @@ public class PlayerMovement : MonoBehaviour
         {
             direccion = new Vector2(Horizontal, Vertical);
         }
-        rb2d.velocity = direccion * MoveSpeed;
+        rb2d.velocity = new Vector2(Horizontal, Vertical) * MoveSpeed;
     }
 }
